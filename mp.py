@@ -1,6 +1,12 @@
 import threading
 import time
 
+# initialization of semaphores
+mutex = 1
+full_rooms = 0
+empty_rooms = n # all rooms are empty at the start
+
+
 # mga blue ang nagbibihis
 def blues_nagbibihis(n, b):
     print("blues only")
@@ -10,8 +16,13 @@ def greens_nagbibihis(n, g):
     print("greens only")
 
 
+# two semaphores daw: door lock and fitting room lock
+door_lock = Semaphore()
+fitting_room_lock = Semaphore()
+
 # input--------------------------------------------
 n, b, g = list(map(int,input().strip().split(" ")))
+
 
 # creating the threads
 blue_thread = threading.Thread(target=blues_nagbibihis, args=(n, b))
