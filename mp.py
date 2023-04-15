@@ -16,9 +16,9 @@ def greens_nagbibihis(n, g):
     print("greens only")
 
 
-# two semaphores daw: door lock and fitting room lock
-door_lock = Semaphore()
-fitting_room_lock = Semaphore()
+# array of two semaphores daw: door lock and dressing rooms lock
+door_lock = Semaphore() # binary semaphore
+dressing_rooms_lock = Semaphore() # counting semaphore
 
 # input--------------------------------------------
 n, b, g = list(map(int,input().strip().split(" ")))
